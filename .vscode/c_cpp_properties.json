@@ -1,0 +1,17 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "C:\\\\Users\\\\Admin\\\\AppData\\\\Local\\\\Arduino15\\\\packages\\\\Seeeduino\\\\tools\\\\**",
+                "C:\\\\Users\\\\Admin\\\\AppData\\\\Local\\\\Arduino15\\\\packages\\\\Seeeduino\\\\hardware\\\\Seeed_STM32F4\\\\1.2.5\\\\**"
+            ],
+            "forcedInclude": [
+                "C:\\\\Users\\\\Admin\\\\AppData\\\\Local\\\\Arduino15\\\\packages\\\\Seeeduino\\\\hardware\\\\Seeed_STM32F4\\\\1.2.5\\\\cores\\\\arduino\\\\Arduino.h"
+            ],
+            "intelliSenseMode": "msvc-x64",
+            "cStandard": "c11"
+        }
+    ],
+    "version": 4
+}
