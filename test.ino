@@ -7,6 +7,7 @@
 
 #include <UART_Interface.h>
 #include <stdio.h>
+#include <iwdg.h>
 
 
 #ifndef GNSS_PWR_PIN
@@ -23,7 +24,7 @@
 #define MAX_NMEA_FRAME_SIZE            MAX_NMEA_FRAME_STRING + 1
 #define MAX_POISITION_LENGHT           127
 
-#define TIMER4_CYCLE_DEFAULT_MS        10000000  // 10s
+#define TIMER4_CYCLE_DEFAULT_MS        5000000  // 10s
 #define TIMER3_CYCLE_DEFAULT_MS        1000000  // 1s
 
 
@@ -351,6 +352,8 @@ void setup()
     timer4.attachInterrupt(TIMER_CH1, timer4_handler);
     timer4.refresh();
     timer4.resume();
+
+    iwdg_init(IWDG_PRE_256, 1250); // init an 8 second wd timer
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -428,4 +431,6 @@ void timer4_handler(void)
     i++;
     SerialUSB.print("===========::============   timer4 handler: ");
     SerialUSB.println(i);
+    // watchdog
+    iwdg_feed();
 }
